@@ -2,7 +2,7 @@ FROM sthapaun/centos-emacs
 MAINTAINER Sthapaun Patinthu <contact@sthapaun.com>
 
 # Download importance packages then install
-RUN yum update; yum -y install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel readline-devel make which python-devel sudo bzip2; 
+RUN yum update; yum -y install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel readline-devel make which python-devel; yum -y install sudo bzip2; 
 
 # Edit sudoers file
 # From https://hub.docker.com/r/liubin/fluentd-agent/~/dockerfile/
