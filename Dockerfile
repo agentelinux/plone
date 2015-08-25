@@ -9,7 +9,7 @@ RUN yum update; yum -y install gcc-c++ patch openssl-devel libjpeg-devel libxslt
 # To avoid error: sudo: sorry, you must have a tty to run sudo
 RUN sed -i -e "s/Defaults    requiretty.*/ #Defaults    requiretty/g" /etc/sudoers
 
-RUN useradd -m admin; su admin; sudo ./install.sh zeo;
+RUN useradd -m admin; su admin; sudo cd /root/Desktop/plone5; sudo ./install.sh zeo;
 
 EXPOSE 8080
 
