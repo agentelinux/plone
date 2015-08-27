@@ -1,4 +1,4 @@
-FROM sthapaun/centos-emacs
+FROM sthapaun/centos-emacs2
 MAINTAINER Sthapaun Patinthu <contact@sthapaun.com>
 
 # Download importance packages then install
