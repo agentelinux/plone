@@ -17,5 +17,4 @@ RUN useradd -m admin; su admin; cd ~/; wget https://launchpad.net/plone/5.0/5.0b
 
 EXPOSE 8080
 
-#CMD sudo -u plone ~/plone5/bin/plone fg
-#CMD sudo -u plone_daemon /opt/plone/zeocluster/bin/plonectl start
+CMD /bin/bash
