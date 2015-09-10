@@ -17,4 +17,4 @@ RUN useradd -m plone; su plone; cd ~/Desktop; wget https://launchpad.net/plone/5
 
 EXPOSE 8080
 
-CMD /bin/bash
+#CMD /bin/bash
