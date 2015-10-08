@@ -1,2 +1,2 @@
 # plone5
-Plone5 Beta release 4
+Series 5.0 Plone5
