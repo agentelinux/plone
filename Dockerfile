@@ -1,5 +1,6 @@
 FROM centos
 MAINTAINER Sthapaun Patinthu <contact@sthapaun.com>
+MAINTAINER Krishna Pennacchioni <krishna@agentelinux.com.br>
 
 
 # Install emacs
