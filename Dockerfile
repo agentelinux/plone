@@ -13,7 +13,7 @@ RUN yum update; yum -y install gcc-c++ patch openssl-devel libjpeg-devel libxslt
 # To avoid error: sudo: sorry, you must have a tty to run sudo
 RUN sed -i -e "s/Defaults    requiretty.*/ #Defaults    requiretty/g" /etc/sudoers
 
-RUN useradd -m plone; su plone; cd ~/Desktop; wget https://launchpad.net/plone/5.0/5.0rc1/+download/Plone-5.0rc1-UnifiedInstaller.tgz; tar -zxvf Plone-5.0rc1-UnifiedInstaller.tgz; mv Plone-5.0rc1-UnifiedInstaller plone5; cd plone5; sudo ./install.sh standalone; sudo -u plone_daemon /opt/plone/zinstance/bin/plonectl start;
+RUN useradd -m plone; su plone; cd ~/Desktop; wget https://launchpad.net/plone/5.0/5.0/+download/Plone-5.0-UnifiedInstaller.tgz; tar -zxvf Plone-5.0-UnifiedInstaller.tgz; mv Plone-5.0-UnifiedInstaller plone5; cd plone5; sudo ./install.sh standalone; sudo -u plone_daemon /opt/plone/zinstance/bin/plonectl start;
 
 # run bottle webapp
 RUN cd ~/; mkdir Dev; cd Dev; wget https://pypi.python.org/packages/source/b/bottle/bottle-0.12.8.tar.gz#md5=13132c0a8f607bf860810a6ee9064c5b; tar -zxvf bottle-0.12.8.tar.gz; mv bottle-0.12.8 bottle; cd bottle; echo "from bottle import route, run, template\n\n" > app.py; echo "@route('/hello/<name>')\n" >> app.py; echo "def index(name):\n\t" >> app.py; echo "return template('<b>Hello {{name}}</b>!', name=name)\n\n" >> app.py; echo "run(host='localhost', port=80)" >> app.py; 
